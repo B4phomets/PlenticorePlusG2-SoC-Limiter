@@ -1,0 +1,15 @@
+[Unit]
+Description=Kostal Plenticore Battery Upper SoC Limiter
+After=network.target
+Wants=network-online.target
+
+[Service]
+User=EVCC_Admin
+ExecStart=/usr/bin/python3 /home/EVCC_Admin/PlenticorePlusG2-SoC-Limiter/PlenticorePlusG2-SoC-Cap.py
+Restart=always
+RestartSec=10
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
